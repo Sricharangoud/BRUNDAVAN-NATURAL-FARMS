@@ -861,7 +861,28 @@ button, input {
   color: var(--golden-yellow);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.product-company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--forest-green);
+  background-color: rgba(20, 83, 45, 0.08);
+  border: 1px solid rgba(20, 83, 45, 0.18);
+  border-radius: 6px;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+  width: fit-content;
+  letter-spacing: 0.2px;
+}
+
+.product-company-badge strong {
+  color: var(--dark-green);
+  font-weight: 700;
 }
 
 .product-name {

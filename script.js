@@ -245,13 +245,228 @@ function closeCart() {
   document.body.style.overflow = "";
 }
 
-function triggerDemoCheckout() {
+// ============================================================================
+// 4. CHECKOUT & TAX INVOICE GENERATION SYSTEM
+// ============================================================================
+let currentPaymentMode = "Cash on Delivery (COD)";
+let lastConfirmedOrder = null;
+
+function openCheckoutModal() {
   if (cart.length === 0) {
-    showToast("Basket Empty", "Please add products before checking out.");
+    showToast("Basket Empty", "Please add products before proceeding to order.");
     return;
   }
+
+  // Close cart drawer
+  closeCart();
+
+  // Populate order items preview in checkout modal
+  const previewContainer = document.getElementById("checkoutItemsPreview");
+  const subtotalEl = document.getElementById("checkoutSubtotal");
+  const totalEl = document.getElementById("checkoutTotal");
+
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+  if (previewContainer) {
+    previewContainer.innerHTML = cart.map(item => `
+      <div class="checkout-preview-item">
+        <img src="${item.image}" alt="${item.name}" class="checkout-preview-thumb">
+        <div class="checkout-preview-details">
+          <div class="checkout-preview-name">${item.name}</div>
+          <div class="checkout-preview-qty">${item.unit} &bull; Qty: ${item.qty} &times; ₹${item.price}</div>
+        </div>
+        <div class="checkout-preview-total">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+      </div>
+    `).join('');
+  }
+
+  if (subtotalEl) subtotalEl.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+  if (totalEl) totalEl.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+
+  const modal = document.getElementById("checkoutModal");
+  if (modal) modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCheckoutModal() {
+  const modal = document.getElementById("checkoutModal");
+  if (modal) modal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+function selectPaymentOption(mode) {
+  const codCard = document.getElementById("payOptionCod");
+  const upiCard = document.getElementById("payOptionUpi");
+  
+  if (mode === 'cod') {
+    if (codCard) {
+      codCard.classList.add("active");
+      const r = codCard.querySelector("input[type='radio']");
+      if (r) r.checked = true;
+    }
+    if (upiCard) {
+      upiCard.classList.remove("active");
+      const r = upiCard.querySelector("input[type='radio']");
+      if (r) r.checked = false;
+    }
+    currentPaymentMode = "Cash on Delivery (COD)";
+  } else {
+    if (upiCard) {
+      upiCard.classList.add("active");
+      const r = upiCard.querySelector("input[type='radio']");
+      if (r) r.checked = true;
+    }
+    if (codCard) {
+      codCard.classList.remove("active");
+      const r = codCard.querySelector("input[type='radio']");
+      if (r) r.checked = false;
+    }
+    currentPaymentMode = "UPI / Online Payment";
+  }
+}
+
+function numberToWords(num) {
+  const a = ['', 'One ', 'Two ', 'Three ', 'Four ', 'Five ', 'Six ', 'Seven ', 'Eight ', 'Nine ', 'Ten ', 'Eleven ', 'Twelve ', 'Thirteen ', 'Fourteen ', 'Fifteen ', 'Sixteen ', 'Seventeen ', 'Eighteen ', 'Nineteen '];
+  const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+  function inWords(n) {
+    if (n === 0) return 'Zero';
+    if (n < 20) return a[n];
+    if (n < 100) return b[Math.floor(n / 10)] + (n % 10 !== 0 ? ' ' + a[n % 10] : ' ');
+    if (n < 1000) return a[Math.floor(n / 100)] + 'Hundred ' + (n % 100 !== 0 ? inWords(n % 100) : '');
+    if (n < 100000) return inWords(Math.floor(n / 1000)) + 'Thousand ' + (n % 1000 !== 0 ? inWords(n % 1000) : '');
+    if (n < 10000000) return inWords(Math.floor(n / 100000)) + 'Lakh ' + (n % 100000 !== 0 ? inWords(n % 100000) : '');
+    return inWords(Math.floor(n / 10000000)) + 'Crore ' + (n % 10000000 !== 0 ? inWords(n % 10000000) : '');
+  }
+
+  const str = inWords(Math.floor(num)).trim();
+  return `Indian Rupees ${str} Only`;
+}
+
+function handlePlaceOrder(e) {
+  if (e) e.preventDefault();
+
+  if (cart.length === 0) {
+    showToast("Basket Empty", "Please add products before confirming order.");
+    return;
+  }
+
+  const custName = document.getElementById("custName") ? document.getElementById("custName").value.trim() : "Valued Customer";
+  const custPhone = document.getElementById("custPhone") ? document.getElementById("custPhone").value.trim() : "+91 98765 43210";
+  const custPincode = document.getElementById("custPincode") ? document.getElementById("custPincode").value.trim() : "506001";
+  const custAddress = document.getElementById("custAddress") ? document.getElementById("custAddress").value.trim() : "Warangal, Telangana";
+
   const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-  alert(`🛒 BRUNDAVAN NATURAL FARMS — DEMO CHECKOUT\n\nOrder Value: ₹${total.toLocaleString('en-IN')}\nItems in Basket: ${cart.length}\n\nThis is a client presentation demonstration. In the production deployment, this launches the secure UPI / Razorpay payment gateway & WhatsApp order dispatch!`);
+  const now = new Date();
+  const year = now.getFullYear();
+  const randomId = Math.floor(1000 + Math.random() * 9000);
+  const invoiceNumber = `BNF-${year}-${randomId}`;
+
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const hours = now.getHours();
+  const mins = String(now.getMinutes()).padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const displayHours = hours % 12 || 12;
+  const formattedDate = `${now.getDate()} ${months[now.getMonth()]} ${year}, ${displayHours}:${mins} ${ampm}`;
+
+  // Store last order for invoice and WhatsApp
+  lastConfirmedOrder = {
+    invoiceNumber,
+    date: formattedDate,
+    customerName: custName,
+    phone: custPhone,
+    address: `${custAddress} - Pincode: ${custPincode}`,
+    items: [...cart],
+    total,
+    paymentMode: currentPaymentMode
+  };
+
+  // Populate Invoice
+  const invNumEl = document.getElementById("invNumber");
+  const invDateEl = document.getElementById("invDate");
+  const invPayModeEl = document.getElementById("invPaymentMode");
+  const invCustNameEl = document.getElementById("invCustName");
+  const invCustPhoneEl = document.getElementById("invCustPhone");
+  const invCustAddrEl = document.getElementById("invCustAddress");
+  const invBodyEl = document.getElementById("invItemsTableBody");
+  const invSubtotalEl = document.getElementById("invSubtotal");
+  const invGrandTotalEl = document.getElementById("invGrandTotal");
+  const invWordsEl = document.getElementById("invAmountInWords");
+
+  if (invNumEl) invNumEl.textContent = invoiceNumber;
+  if (invDateEl) invDateEl.textContent = formattedDate;
+  if (invPayModeEl) invPayModeEl.textContent = currentPaymentMode;
+  if (invCustNameEl) invCustNameEl.textContent = custName;
+  if (invCustPhoneEl) invCustPhoneEl.textContent = custPhone;
+  if (invCustAddrEl) invCustAddrEl.textContent = `${custAddress} — PIN: ${custPincode}`;
+
+  if (invBodyEl) {
+    invBodyEl.innerHTML = cart.map((item, idx) => `
+      <tr>
+        <td style="color:#718096;font-weight:600;">${idx + 1}</td>
+        <td>
+          <div class="invoice-item-name">${item.name}</div>
+          <div class="invoice-item-sub">100% Traditional &bull; Farm Fresh</div>
+        </td>
+        <td>${item.unit}</td>
+        <td style="text-align:center;font-weight:700;">${item.qty}</td>
+        <td style="text-align:right;">₹${item.price.toLocaleString('en-IN')}</td>
+        <td style="text-align:right;font-weight:700;color:var(--dark-green);">₹${(item.price * item.qty).toLocaleString('en-IN')}</td>
+      </tr>
+    `).join('');
+  }
+
+  if (invSubtotalEl) invSubtotalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+  if (invGrandTotalEl) invGrandTotalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
+  if (invWordsEl) invWordsEl.textContent = numberToWords(total);
+
+  // Close checkout modal
+  closeCheckoutModal();
+
+  // Reset cart
+  cart = [];
+  updateCartUI();
+
+  // Open invoice modal
+  const invoiceModal = document.getElementById("invoiceModal");
+  if (invoiceModal) invoiceModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+
+  showToast("Order Placed Successfully! 🎉", `Invoice #${invoiceNumber} generated.`);
+}
+
+function closeInvoiceModal() {
+  const modal = document.getElementById("invoiceModal");
+  if (modal) modal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+function printInvoiceDoc() {
+  window.print();
+}
+
+function sendInvoiceToWhatsApp() {
+  if (!lastConfirmedOrder) return;
+  const itemsText = lastConfirmedOrder.items
+    .map(i => `• ${i.name} (${i.unit}) x ${i.qty} = ₹${i.price * i.qty}`)
+    .join('\n');
+
+  const text = `*BRUNDAVAN NATURAL FARMS — ORDER CONFIRMATION*\n` +
+    `---------------------------------------\n` +
+    `*Invoice No:* ${lastConfirmedOrder.invoiceNumber}\n` +
+    `*Date:* ${lastConfirmedOrder.date}\n` +
+    `*Customer:* ${lastConfirmedOrder.customerName}\n` +
+    `*Phone:* ${lastConfirmedOrder.phone}\n` +
+    `*Delivery Address:* ${lastConfirmedOrder.address}\n` +
+    `*Payment Mode:* ${lastConfirmedOrder.paymentMode}\n` +
+    `---------------------------------------\n` +
+    `*ORDERED ITEMS:*\n${itemsText}\n` +
+    `---------------------------------------\n` +
+    `*Grand Total:* ₹${lastConfirmedOrder.total.toLocaleString('en-IN')} (Free Delivery)\n\n` +
+    `_Thank you for supporting natural, traditional Gir cow farming!_`;
+
+  const url = `https://wa.me/919876543210?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
 }
 
 // ============================================================================
@@ -594,6 +809,8 @@ document.addEventListener("DOMContentLoaded", () => {
       closeLightbox();
       closeProcessDeepModal();
       closePolicyModal();
+      closeCheckoutModal();
+      closeInvoiceModal();
     }
   });
 

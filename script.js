@@ -1,6 +1,6 @@
 /**
- * BRUNDAVAN NATURAL FARMS — CLIENT DEMO SCRIPT
- * Products: Milk, Curd, Ghee, Oil, Dry Fruits, Dry Powders
+ * BRUNDAVAN NATURAL FARMS — OFFICIAL APPLICATION SCRIPT
+ * Products: Milk, Curd, Ghee, Oil, Dry Fruits, Dryfruits Powder
  * Features:
  * 1. Making Process Animation Video Player (MP4 & WebP)
  * 2. 6-Step Vedic Process Interactive Walkthrough
@@ -102,18 +102,18 @@ const PRODUCTS_DATA = [
   {
     id: 6,
     category: "powder",
-    categoryLabel: "Dry Powders",
-    name: "Brundavan Natural Farms - Dry Powders",
+    categoryLabel: "Dryfruits Powder",
+    name: "Brundavan Natural Farms - Dryfruits Powder",
     price: 320,
     unit: "/ 200g",
-    image: "images/product_drypowder.jpg",
-    badge: "Stone-Ground Mix",
-    description: "Artisanal, slow stone-milled blend of natural herbs and pure ingredients. Prepared fresh with traditional care for wholesome family health.",
+    image: "images/product_dryfruits_powder.jpg",
+    badge: "10+ Natural Ingredients",
+    description: "Artisanal blend of 10+ wholesome dry fruits, nuts, seeds, and spices. Made with no chemicals and no preservatives for pure family nourishment.",
     features: [
-      "🪨 Slow Stone-Ground Milling",
-      "🌱 Authentic Natural Ingredients",
-      "🍼 Wholesome Family Nutrition",
-      "✨ Zero Synthetic Preservatives"
+      "🌰 10+ Wholesome Dry Fruits & Nuts",
+      "🌱 100% Pure & Natural Ingredients",
+      "🚫 No Chemicals & No Preservatives",
+      "✨ Stone-Ground for Authentic Nutrition"
     ]
   }
 ];
@@ -195,7 +195,7 @@ function updateCartUI() {
         <div class="empty-cart-view">
           <div class="empty-cart-icon">🧺</div>
           <h4>Your basket is currently empty</h4>
-          <p>Explore our pure farm harvest: Milk, Curd, Ghee, Oils, Dry Fruits, and Dry Powders.</p>
+          <p>Explore our pure farm harvest: Milk, Curd, Ghee, Oils, Dry Fruits, and Dryfruits Powder.</p>
           <button class="btn btn-primary btn-sm" onclick="closeCart(); location.href='#products'">Browse Products</button>
         </div>
       `;
@@ -562,7 +562,7 @@ function renderSearchResults(query) {
         <span class="badge-pill" style="cursor:pointer;" onclick="setSearchTerm('ghee')">Ghee</span>
         <span class="badge-pill" style="cursor:pointer;" onclick="setSearchTerm('oil')">Oil</span>
         <span class="badge-pill" style="cursor:pointer;" onclick="setSearchTerm('dry fruits')">Dry Fruits</span>
-        <span class="badge-pill" style="cursor:pointer;" onclick="setSearchTerm('dry powders')">Dry Powders</span>
+        <span class="badge-pill" style="cursor:pointer;" onclick="setSearchTerm('dryfruits powder')">Dryfruits Powder</span>
       </div>
     `;
     return;
@@ -576,7 +576,7 @@ function renderSearchResults(query) {
 
   if (matches.length === 0) {
     resultsContainer.innerHTML = `
-      <p class="search-hint">No products matching "<strong>${escapeHtml(query)}</strong>". We specialize in: Milk, Curd, Ghee, Oils, Dry Fruits, and Dry Powders.</p>
+      <p class="search-hint">No products matching "<strong>${escapeHtml(query)}</strong>". We specialize in: Milk, Curd, Ghee, Oils, Dry Fruits, and Dryfruits Powder.</p>
     `;
   } else {
     resultsContainer.innerHTML = matches.map(p => `
@@ -678,28 +678,24 @@ function openPolicyModal(type) {
   const bodyEl = document.getElementById("policyModalBody");
 
   if (type === "privacy") {
-    titleEl.textContent = "Privacy Policy (Client Demo)";
+    titleEl.textContent = "Privacy Policy";
     bodyEl.innerHTML = `
       <p style="margin-bottom:12px;">At <strong>Brundavan Natural Farms</strong>, customer confidentiality and trust are central to our brand values. We treat all personal details—including delivery addresses and payment choices—with highest confidentiality and strict encryption standards.</p>
-      <p style="font-size:0.85rem;color:var(--text-muted);">* Demonstration policy placeholder prepared for client presentation review.</p>
     `;
   } else if (type === "terms") {
-    titleEl.textContent = "Terms & Conditions (Client Demo)";
+    titleEl.textContent = "Terms & Conditions";
     bodyEl.innerHTML = `
-      <p style="margin-bottom:12px;">All products listed on Brundavan Natural Farms are prepared adhering to pure traditional standards. Demo prices depicted on this prototype represent presentation pricing.</p>
-      <p style="font-size:0.85rem;color:var(--text-muted);">* Demonstration terms placeholder prepared for client presentation review.</p>
+      <p style="margin-bottom:12px;">All products listed on Brundavan Natural Farms are prepared adhering to pure traditional Vedic standards with no chemicals and zero synthetic additives.</p>
     `;
   } else if (type === "shipping") {
-    titleEl.textContent = "Shipping Policy (Client Demo)";
+    titleEl.textContent = "Shipping Policy";
     bodyEl.innerHTML = `
       <p style="margin-bottom:12px;"><strong>Direct Farm Delivery:</strong> We ensure same-day dispatch for city deliveries in temperature-controlled sustainable packaging. Free shipping is provided for all orders exceeding ₹999.</p>
-      <p style="font-size:0.85rem;color:var(--text-muted);">* Demonstration shipping policy placeholder prepared for client presentation review.</p>
     `;
   } else if (type === "refund") {
-    titleEl.textContent = "Refund Policy (Client Demo)";
+    titleEl.textContent = "Refund Policy";
     bodyEl.innerHTML = `
       <p style="margin-bottom:12px;"><strong>100% Satisfaction Guarantee:</strong> If any farm fresh dairy product or cold-pressed oil does not meet your expectations, we offer hassle-free replacements or refunds within 24 hours of delivery.</p>
-      <p style="font-size:0.85rem;color:var(--text-muted);">* Demonstration refund policy placeholder prepared for client presentation review.</p>
     `;
   }
 

@@ -2,7 +2,7 @@
 
 > **Rooted in Nature, Committed to Purity**
 
-Official web application for **Brundavan Natural Farms** — delivering authentic farm-fresh Desi Gir Cow A2 dairy, Vedic Bilona Ghee, wood cold-pressed oils, pure milk, curd, dry fruits, and traditional dry powders.
+Official web application for **Brundavan Natural Farms** — delivering authentic farm-fresh Desi Gir Cow A2 dairy, Vedic Bilona Ghee, wood cold-pressed oils, pure milk, curd, dry fruits, and traditional dryfruits powder.
 
 ---
 

@@ -6,10 +6,10 @@
   <title>Brundavan Natural Farms — Rooted in Nature, Committed to Purity</title>
   <meta name="description" content="Official website of Brundavan Natural Farms in Warangal, Telangana. Learn about our ethical Gir cow agribusiness, Vedic Ahimsa dairy, wood cold-pressed oils, and our direct-to-family digital portal.">
   
-  <!-- Google Fonts: Playfair Display & Outfit -->
+  <!-- Google Fonts: Cormorant Garamond, Marcellus, Playfair Display & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Marcellus&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -43,11 +43,11 @@
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Our Products</a></li>
           <li class="nav-item"><a href="farm.html" class="nav-link">Our Farm</a></li>
-          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
           <li class="nav-item"><a href="process.html" class="nav-link">Our Process</a></li>
           <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -132,7 +132,7 @@
         </div>
 
         <!-- 4 CORE ENTERPRISE PILLARS -->
-        <div class="hero-pillars animate-fade-up delay-4" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="hero-pillars animate-fade-up delay-4">
           <div class="pillar-card">
             <div class="pillar-icon">🐄</div>
             <div class="pillar-info">
@@ -280,6 +280,274 @@
   </section>
 
   <!-- =========================================================================
+       FEATURED FARM PRODUCTS SECTION
+       ========================================================================= -->
+  <section class="products-section" id="featuredProducts" style="padding: 70px 0; background: #FAFAF7;">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="home-business-badge-pill" style="margin-bottom: 12px; display: inline-flex;">🌿 PURE FARM DIRECT HARVEST 🌿</span>
+        <h2 class="section-title">Our Pure Farm Products</h2>
+        <div class="section-divider">
+          <span></span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#D4A72C"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
+          <span></span>
+        </div>
+        <p class="section-desc" style="max-width: 650px; margin: 0 auto 30px;">
+          Fresh, unadulterated harvests sourced directly from our Warangal farm and free-grazing indigenous Gir cows.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- 1. MILK -->
+        <article class="product-card" data-category="milk" data-id="1">
+          <div class="product-badge">Fresh &bull; A2 Cow Milk</div>
+          <div class="product-img-box">
+            <img src="images/a2_gir_cow_milk.jpg" alt="A2 Gir Cow Milk" class="product-img" loading="lazy">
+            <div class="product-overlay-actions">
+              <button class="quick-view-btn" onclick="openProductModal(1)" aria-label="View Milk Details">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Quick View</span>
+              </button>
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-category-tag">Category: Milk</div>
+            <div class="product-company-badge">
+              <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+            </div>
+            <h3 class="product-name">A2 Gir Cow Milk</h3>
+            <p class="product-desc">Pure wholesome dairy milk sourced from ethically raised, pasture-grazed indigenous Gir cows. Bottled fresh daily in eco-friendly sanitized glass bottles.</p>
+            <div class="product-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-val">5.0</span>
+              <span class="purity-tag">(100% Native A2)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-box">
+                <span class="price-curr">&#8377;</span><span class="price-amount">85</span>
+                <span class="price-unit">/ 1 Litre</span>
+                <div class="purity-price-label">Farm Direct Price</div>
+              </div>
+              <div class="card-btn-group">
+                <button class="btn btn-outline-green btn-sm" onclick="openProductModal(1)">View Product</button>
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(1, 'A2 Gir Cow Milk', 85, 'images/a2_gir_cow_milk.jpg', '1 Litre')">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. CURD -->
+        <article class="product-card" data-category="curd" data-id="2">
+          <div class="product-badge">Naturally Prepared</div>
+          <div class="product-img-box">
+            <img src="images/product_curd.jpg" alt="Traditional Curd" class="product-img" loading="lazy">
+            <div class="product-overlay-actions">
+              <button class="quick-view-btn" onclick="openProductModal(2)" aria-label="View Curd Details">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Quick View</span>
+              </button>
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-category-tag">Category: Curd</div>
+            <div class="product-company-badge">
+              <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+            </div>
+            <h3 class="product-name">Traditional Curd</h3>
+            <p class="product-desc">Fresh and traditionally prepared curd, naturally set in porous terracotta pots using cultured A2 Gir cow milk for rich natural probiotics and creamy texture.</p>
+            <div class="product-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-val">5.0</span>
+              <span class="purity-tag">(Earthenware Set)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-box">
+                <span class="price-curr">&#8377;</span><span class="price-amount">95</span>
+                <span class="price-unit">/ 500g</span>
+                <div class="purity-price-label">Farm Direct Price</div>
+              </div>
+              <div class="card-btn-group">
+                <button class="btn btn-outline-green btn-sm" onclick="openProductModal(2)">View Product</button>
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(2, 'Traditional Curd', 95, 'images/product_curd.jpg', '500g')">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. GHEE -->
+        <article class="product-card" data-category="ghee" data-id="3">
+          <div class="product-badge gold-badge">Traditional Bilona Method</div>
+          <div class="product-img-box">
+            <img src="images/a2_gir_cow_ghee.jpg" alt="A2 Gir Cow Ghee" class="product-img" loading="lazy">
+            <div class="product-overlay-actions">
+              <button class="quick-view-btn" onclick="openProductModal(3)" aria-label="View Ghee Details">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Quick View</span>
+              </button>
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-category-tag">Category: Ghee</div>
+            <div class="product-company-badge">
+              <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+            </div>
+            <h3 class="product-name">A2 Gir Cow Ghee</h3>
+            <p class="product-desc">Traditional Vedic ghee with a rich golden granular appearance. Handcrafted from cultured A2 curd, slow-boiled in brass vessels over low firewood embers.</p>
+            <div class="product-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-val">5.0</span>
+              <span class="purity-tag">(Vedic Bilona)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-box">
+                <span class="price-curr">&#8377;</span><span class="price-amount">1,450</span>
+                <span class="price-unit">/ 500ml</span>
+                <div class="purity-price-label">Farm Direct Price</div>
+              </div>
+              <div class="card-btn-group">
+                <button class="btn btn-outline-green btn-sm" onclick="openProductModal(3)">View Product</button>
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(3, 'A2 Gir Cow Ghee', 1450, 'images/a2_gir_cow_ghee.jpg', '500ml')">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. OIL -->
+        <article class="product-card" data-category="oil" data-id="4">
+          <div class="product-badge">Traditionally Extracted</div>
+          <div class="product-img-box">
+            <img src="images/cold_pressed_oils.jpg" alt="Cold Pressed Oils" class="product-img" loading="lazy">
+            <div class="product-overlay-actions">
+              <button class="quick-view-btn" onclick="openProductModal(4)" aria-label="View Oil Details">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Quick View</span>
+              </button>
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-category-tag">Category: Oil</div>
+            <div class="product-company-badge">
+              <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+            </div>
+            <h3 class="product-name">Cold Pressed Oils</h3>
+            <p class="product-desc">Pure wood-pressed (marachekku) oils extracted without external heat or chemical solvents. Retains uncompromised aroma, vital nutrients, and natural antioxidants.</p>
+            <div class="product-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-val">4.9</span>
+              <span class="purity-tag">(Wood-Pressed)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-box">
+                <span class="price-curr">&#8377;</span><span class="price-amount">380</span>
+                <span class="price-unit">/ 1 Litre</span>
+                <div class="purity-price-label">Farm Direct Price</div>
+              </div>
+              <div class="card-btn-group">
+                <button class="btn btn-outline-green btn-sm" onclick="openProductModal(4)">View Product</button>
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(4, 'Cold Pressed Oils', 380, 'images/cold_pressed_oils.jpg', '1 Litre')">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. DRY FRUITS -->
+        <article class="product-card" data-category="dryfruits" data-id="5">
+          <div class="product-badge">Handpicked Grade A</div>
+          <div class="product-img-box">
+            <img src="images/product_dryfruits.jpg" alt="Selected Dry Fruits" class="product-img" loading="lazy">
+            <div class="product-overlay-actions">
+              <button class="quick-view-btn" onclick="openProductModal(5)" aria-label="View Dry Fruits Details">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Quick View</span>
+              </button>
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-category-tag">Category: Dry Fruits</div>
+            <div class="product-company-badge">
+              <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+            </div>
+            <h3 class="product-name">Brundavan Natural Farms - Dry Fruits</h3>
+            <p class="product-desc">Supreme grade almonds, whole cashews, natural walnuts, and golden raisins. Sun-dried and unpolished for wholesome crunch and authentic nutrition.</p>
+            <div class="product-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-val">4.9</span>
+              <span class="purity-tag">(Grade-A Jumbo)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-box">
+                <span class="price-curr">&#8377;</span><span class="price-amount">450</span>
+                <span class="price-unit">/ 250g</span>
+                <div class="purity-price-label">Farm Direct Price</div>
+              </div>
+              <div class="card-btn-group">
+                <button class="btn btn-outline-green btn-sm" onclick="openProductModal(5)">View Product</button>
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(5, 'Brundavan Natural Farms - Dry Fruits', 450, 'images/product_dryfruits.jpg', '250g')">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. DRYFRUITS POWDER -->
+        <article class="product-card" data-category="powder" data-id="6">
+          <div class="product-badge">10+ Natural Ingredients</div>
+          <div class="product-img-box">
+            <img src="images/product_dryfruits_powder.jpg" alt="Brundavan Natural Farms - Dryfruits Powder" class="product-img" loading="lazy">
+            <div class="product-overlay-actions">
+              <button class="quick-view-btn" onclick="openProductModal(6)" aria-label="View Powder Details">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>Quick View</span>
+              </button>
+            </div>
+          </div>
+          <div class="product-details">
+            <div class="product-category-tag">Category: Dryfruits Powder</div>
+            <div class="product-company-badge">
+              <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+            </div>
+            <h3 class="product-name">Brundavan Natural Farms - Dryfruits Powder</h3>
+            <p class="product-desc">Artisanal blend of 10+ wholesome dry fruits, nuts, seeds, and spices. Made with no chemicals and no preservatives for pure family nourishment.</p>
+            <div class="product-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="rating-val">5.0</span>
+              <span class="purity-tag">(Authentic Blend)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-box">
+                <span class="price-curr">&#8377;</span><span class="price-amount">320</span>
+                <span class="price-unit">/ 200g</span>
+                <div class="purity-price-label">Farm Direct Price</div>
+              </div>
+              <div class="card-btn-group">
+                <button class="btn btn-outline-green btn-sm" onclick="openProductModal(6)">View Product</button>
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(6, 'Brundavan Natural Farms - Dryfruits Powder', 320, 'images/product_dryfruits_powder.jpg', '200g')">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center" style="margin-top: 40px;">
+        <a href="products.html" class="btn btn-primary" style="padding: 14px 36px; font-size: 1.05rem;">
+          <span>Explore All Products &amp; Order Online &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
        SECTION 2: ABOUT THIS WEBSITE (The Official Direct Farm Portal)
        ========================================================================= -->
   <section class="home-website-section" id="aboutWebsite">
@@ -416,11 +684,11 @@
 
       <div class="gateways-grid">
         
-        <a href="about.html" class="gateway-card">
-          <div class="gateway-icon">🌿</div>
-          <h4>About Us</h4>
-          <p>Our origin story, Vedic vision, and founder's commitment to pure wellness.</p>
-          <span class="gateway-arrow">Learn Our Story &rarr;</span>
+        <a href="products.html" class="gateway-card">
+          <div class="gateway-icon">🥛</div>
+          <h4>Our Products</h4>
+          <p>Browse our 6 pure harvests: Milk, Curd, Ghee, Oils &amp; Dry Fruits.</p>
+          <span class="gateway-arrow">Shop Catalog &rarr;</span>
         </a>
 
         <a href="farm.html" class="gateway-card">
@@ -428,13 +696,6 @@
           <h4>Our Farm</h4>
           <p>Meet our 150+ Gir cows, pasture routines, and ecological sanctuary.</p>
           <span class="gateway-arrow">Tour the Farm &rarr;</span>
-        </a>
-
-        <a href="products.html" class="gateway-card">
-          <div class="gateway-icon">🥛</div>
-          <h4>Products</h4>
-          <p>Browse our 6 pure harvests: Milk, Curd, Ghee, Oils &amp; Dry Fruits.</p>
-          <span class="gateway-arrow">Shop Catalog &rarr;</span>
         </a>
 
         <a href="process.html" class="gateway-card">
@@ -449,6 +710,13 @@
           <h4>Gallery</h4>
           <p>Authentic photographs from our pastures, calves, and harvest processing.</p>
           <span class="gateway-arrow">View Photos &rarr;</span>
+        </a>
+
+        <a href="about.html" class="gateway-card">
+          <div class="gateway-icon">🌿</div>
+          <h4>About Us</h4>
+          <p>Our origin story, Vedic vision, and founder's commitment to pure wellness.</p>
+          <span class="gateway-arrow">Learn Our Story &rarr;</span>
         </a>
 
       </div>
@@ -511,12 +779,12 @@
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Our Products</a></li>
             <li><a href="farm.html">Our Farm</a></li>
-            <li><a href="products.html">All Products</a></li>
             <li><a href="process.html">Our Process</a></li>
-            <li><a href="gallery.html">Farm Gallery</a></li>
-            <li><a href="contact.html">Contact &amp; Gaushala</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
@@ -524,9 +792,9 @@
           <h4 class="footer-heading">Our Products</h4>
           <ul class="footer-links">
             <li><a href="products.html">A2 Gir Cow Milk</a></li>
-            <li><a href="products.html">Clay Pot Curd</a></li>
-            <li><a href="products.html">Vedic Bilona Ghee</a></li>
-            <li><a href="products.html">Wood Cold-Pressed Oil</a></li>
+            <li><a href="products.html">Traditional Curd</a></li>
+            <li><a href="products.html">A2 Gir Cow Ghee</a></li>
+            <li><a href="products.html">Cold Pressed Oils</a></li>
             <li><a href="products.html">Supreme Dry Fruits</a></li>
             <li><a href="products.html">Artisanal Dryfruits Powder</a></li>
           </ul>

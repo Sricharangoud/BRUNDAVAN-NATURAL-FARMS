@@ -6,10 +6,10 @@
   <title>Farm Products — Brundavan Natural Farms | Pure A2 Milk, Bilona Ghee, Oils &amp; Dry Fruits</title>
   <meta name="description" content="Shop 100% natural, farm-fresh products from Brundavan Natural Farms. Pure A2 Gir Cow Milk, Earthenware Curd, Vedic Bilona Ghee, Wood Cold-Pressed Oils, Dry Fruits &amp; Powders.">
   
-  <!-- Google Fonts: Playfair Display & Outfit -->
+  <!-- Google Fonts: Cormorant Garamond, Marcellus, Playfair Display & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Marcellus&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -43,11 +43,11 @@
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link active">Our Products</a></li>
           <li class="nav-item"><a href="farm.html" class="nav-link">Our Farm</a></li>
-          <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
           <li class="nav-item"><a href="process.html" class="nav-link">Our Process</a></li>
           <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -107,31 +107,6 @@
   <section class="products-section" style="padding: 70px 0;">
     <div class="container">
       
-      <!-- CATEGORY FILTER TABS -->
-      <div class="filter-tabs-wrapper">
-        <button class="filter-tab-btn product-filter-btn active" data-category="all" onclick="filterProductCategory('all')">
-          All Products (6)
-        </button>
-        <button class="filter-tab-btn product-filter-btn" data-category="milk" onclick="filterProductCategory('milk')">
-          A2 Milk
-        </button>
-        <button class="filter-tab-btn product-filter-btn" data-category="curd" onclick="filterProductCategory('curd')">
-          Terracotta Curd
-        </button>
-        <button class="filter-tab-btn product-filter-btn" data-category="ghee" onclick="filterProductCategory('ghee')">
-          Vedic Bilona Ghee
-        </button>
-        <button class="filter-tab-btn product-filter-btn" data-category="oil" onclick="filterProductCategory('oil')">
-          Wood Cold-Pressed Oil
-        </button>
-        <button class="filter-tab-btn product-filter-btn" data-category="dryfruits" onclick="filterProductCategory('dryfruits')">
-          Dry Fruits
-        </button>
-        <button class="filter-tab-btn product-filter-btn" data-category="powder" onclick="filterProductCategory('powder')">
-          Dry Powders
-        </button>
-      </div>
-
       <!-- PRODUCT CARDS GRID (ALL 6 PRODUCTS) -->
       <div class="products-grid">
         
@@ -139,7 +114,7 @@
         <article class="product-card" data-category="milk" data-id="1">
           <div class="product-badge">Fresh &bull; A2 Cow Milk</div>
           <div class="product-img-box">
-            <img src="images/product_milk.jpg" alt="Pure A2 Gir Cow Milk in Glass Bottle" class="product-img" loading="lazy">
+            <img src="images/a2_gir_cow_milk.jpg" alt="Pure A2 Gir Cow Milk in Glass Bottle" class="product-img" loading="lazy">
             <div class="product-overlay-actions">
               <button class="quick-view-btn" onclick="openProductModal(1)" aria-label="View Milk Details">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -152,7 +127,7 @@
             <div class="product-company-badge">
               <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
             </div>
-            <h3 class="product-name">Brundavan Natural Farms - Milk</h3>
+            <h3 class="product-name">A2 Gir Cow Milk</h3>
             <p class="product-desc">Pure wholesome dairy milk sourced from ethically raised, pasture-grazed indigenous Gir cows. Bottled fresh daily in eco-friendly sanitized glass bottles.</p>
             <div class="product-rating">
               <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -167,7 +142,7 @@
               </div>
               <div class="card-btn-group">
                 <button class="btn btn-outline-green btn-sm" onclick="openProductModal(1)">View Product</button>
-                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(1, 'Brundavan Natural Farms - Milk', 85, 'images/product_milk.jpg', '1 Litre')">
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(1, 'A2 Gir Cow Milk', 85, 'images/a2_gir_cow_milk.jpg', '1 Litre')">
                   <span>Add to Cart</span>
                 </button>
               </div>
@@ -192,7 +167,7 @@
             <div class="product-company-badge">
               <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
             </div>
-            <h3 class="product-name">Brundavan Natural Farms - Curd</h3>
+            <h3 class="product-name">Traditional Curd</h3>
             <p class="product-desc">Fresh and traditionally prepared curd, naturally set in porous terracotta pots using cultured A2 Gir cow milk for rich natural probiotics and creamy texture.</p>
             <div class="product-rating">
               <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -207,7 +182,7 @@
               </div>
               <div class="card-btn-group">
                 <button class="btn btn-outline-green btn-sm" onclick="openProductModal(2)">View Product</button>
-                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(2, 'Brundavan Natural Farms - Curd', 95, 'images/product_curd.jpg', '500g')">
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(2, 'Traditional Curd', 95, 'images/product_curd.jpg', '500g')">
                   <span>Add to Cart</span>
                 </button>
               </div>
@@ -219,7 +194,7 @@
         <article class="product-card" data-category="ghee" data-id="3">
           <div class="product-badge gold-badge">Traditional Bilona Method</div>
           <div class="product-img-box">
-            <img src="images/product_ghee.jpg" alt="Pure Golden Ghee in glass jar" class="product-img" loading="lazy">
+            <img src="images/a2_gir_cow_ghee.jpg" alt="Pure Golden Ghee in glass jar" class="product-img" loading="lazy">
             <div class="product-overlay-actions">
               <button class="quick-view-btn" onclick="openProductModal(3)" aria-label="View Ghee Details">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -232,7 +207,7 @@
             <div class="product-company-badge">
               <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
             </div>
-            <h3 class="product-name">Brundavan Natural Farms - Ghee</h3>
+            <h3 class="product-name">A2 Gir Cow Ghee</h3>
             <p class="product-desc">Traditional Vedic ghee with a rich golden granular appearance. Handcrafted from cultured A2 curd, slow-boiled in brass vessels over low firewood embers.</p>
             <div class="product-rating">
               <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -247,7 +222,7 @@
               </div>
               <div class="card-btn-group">
                 <button class="btn btn-outline-green btn-sm" onclick="openProductModal(3)">View Product</button>
-                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(3, 'Brundavan Natural Farms - Ghee', 1450, 'images/product_ghee.jpg', '500ml')">
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(3, 'A2 Gir Cow Ghee', 1450, 'images/a2_gir_cow_ghee.jpg', '500ml')">
                   <span>Add to Cart</span>
                 </button>
               </div>
@@ -259,7 +234,7 @@
         <article class="product-card" data-category="oil" data-id="4">
           <div class="product-badge">Traditionally Extracted</div>
           <div class="product-img-box">
-            <img src="images/product_oil.jpg" alt="Pure Cold-Pressed Oil" class="product-img" loading="lazy">
+            <img src="images/cold_pressed_oils.jpg" alt="Pure Cold-Pressed Oil" class="product-img" loading="lazy">
             <div class="product-overlay-actions">
               <button class="quick-view-btn" onclick="openProductModal(4)" aria-label="View Oil Details">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -272,7 +247,7 @@
             <div class="product-company-badge">
               <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
             </div>
-            <h3 class="product-name">Brundavan Natural Farms - Oil</h3>
+            <h3 class="product-name">Cold Pressed Oils</h3>
             <p class="product-desc">Pure wood-pressed (marachekku) oils extracted without external heat or chemical solvents. Retains uncompromised aroma, vital nutrients, and natural antioxidants.</p>
             <div class="product-rating">
               <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -287,7 +262,7 @@
               </div>
               <div class="card-btn-group">
                 <button class="btn btn-outline-green btn-sm" onclick="openProductModal(4)">View Product</button>
-                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(4, 'Brundavan Natural Farms - Oil', 380, 'images/product_oil.jpg', '1 Litre')">
+                <button class="btn btn-primary btn-sm btn-cart" onclick="addToCart(4, 'Cold Pressed Oils', 380, 'images/cold_pressed_oils.jpg', '1 Litre')">
                   <span>Add to Cart</span>
                 </button>
               </div>
@@ -443,12 +418,12 @@
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Our Products</a></li>
             <li><a href="farm.html">Our Farm</a></li>
-            <li><a href="products.html">All Products</a></li>
             <li><a href="process.html">Our Process</a></li>
-            <li><a href="gallery.html">Farm Gallery</a></li>
-            <li><a href="contact.html">Contact &amp; Gaushala</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
@@ -456,9 +431,9 @@
           <h4 class="footer-heading">Our Products</h4>
           <ul class="footer-links">
             <li><a href="products.html">A2 Gir Cow Milk</a></li>
-            <li><a href="products.html">Clay Pot Curd</a></li>
-            <li><a href="products.html">Vedic Bilona Ghee</a></li>
-            <li><a href="products.html">Wood Cold-Pressed Oil</a></li>
+            <li><a href="products.html">Traditional Curd</a></li>
+            <li><a href="products.html">A2 Gir Cow Ghee</a></li>
+            <li><a href="products.html">Cold Pressed Oils</a></li>
             <li><a href="products.html">Supreme Dry Fruits</a></li>
             <li><a href="products.html">Artisanal Dryfruits Powder</a></li>
           </ul>

@@ -132,9 +132,29 @@ function pauseProcessVideo() {
 }
 
 // ============================================================================
-// 4. SHOPPING CART SYSTEM & DRAWER
+// 4. SHOPPING CART SYSTEM & DRAWER (PERSISTENT ACROSS SUBPAGES)
 // ============================================================================
 let cart = [];
+
+function loadCart() {
+  try {
+    const saved = localStorage.getItem("bnf_cart_items");
+    if (saved) {
+      cart = JSON.parse(saved);
+    }
+  } catch (e) {
+    cart = [];
+  }
+}
+
+function saveCart() {
+  try {
+    localStorage.setItem("bnf_cart_items", JSON.stringify(cart));
+  } catch (e) {}
+}
+
+// Load cart state on script execution
+loadCart();
 
 function addToCart(productId, name, price, image, unit, quantity = 1) {
   const existingIndex = cart.findIndex(item => item.id === productId);
@@ -151,6 +171,7 @@ function addToCart(productId, name, price, image, unit, quantity = 1) {
     });
   }
 
+  saveCart();
   updateCartUI();
   showToast("Added to Cart!", `${name} (${quantity} × ₹${price}) added to your basket.`);
   animateCartBadge();
@@ -164,12 +185,14 @@ function changeCartQty(productId, delta) {
   if (item.qty <= 0) {
     removeFromCart(productId);
   } else {
+    saveCart();
     updateCartUI();
   }
 }
 
 function removeFromCart(productId) {
   cart = cart.filter(i => i.id !== productId);
+  saveCart();
   updateCartUI();
   showToast("Item Removed", "Removed from your farm basket.");
 }
@@ -196,7 +219,7 @@ function updateCartUI() {
           <div class="empty-cart-icon">🧺</div>
           <h4>Your basket is currently empty</h4>
           <p>Explore our pure farm harvest: Milk, Curd, Ghee, Oils, Dry Fruits, and Dryfruits Powder.</p>
-          <button class="btn btn-primary btn-sm" onclick="closeCart(); location.href='#products'">Browse Products</button>
+          <button class="btn btn-primary btn-sm" onclick="closeCart(); location.href='products.html'">Browse Products</button>
         </div>
       `;
     } else {
@@ -425,6 +448,7 @@ function handlePlaceOrder(e) {
 
   // Reset cart
   cart = [];
+  saveCart();
   updateCartUI();
 
   // Open invoice modal
@@ -678,24 +702,29 @@ function openPolicyModal(type) {
   const bodyEl = document.getElementById("policyModalBody");
 
   if (type === "privacy") {
-    titleEl.textContent = "Privacy Policy";
+    titleEl.textContent = "Privacy Policy — Brundavan Natural Farms";
     bodyEl.innerHTML = `
-      <p style="margin-bottom:12px;">At <strong>Brundavan Natural Farms</strong>, customer confidentiality and trust are central to our brand values. We treat all personal details—including delivery addresses and payment choices—with highest confidentiality and strict encryption standards.</p>
+      <p style="margin-bottom:12px;">At <strong>Brundavan Natural Farms</strong>, we hold customer confidentiality and trust in the highest regard. Personal information shared during order placement—such as customer names, delivery addresses, contact numbers, and payment preferences—is encrypted and used exclusively for packing, billing, and dispatching your orders.</p>
+      <p style="margin-bottom:12px;">We never sell, rent, or distribute personal information to external marketing agencies or third parties. All transactions adhere to stringent security protocols to ensure complete safety and peace of mind.</p>
     `;
   } else if (type === "terms") {
-    titleEl.textContent = "Terms & Conditions";
+    titleEl.textContent = "Terms & Conditions — Brundavan Natural Farms";
     bodyEl.innerHTML = `
-      <p style="margin-bottom:12px;">All products listed on Brundavan Natural Farms are prepared adhering to pure traditional Vedic standards with no chemicals and zero synthetic additives.</p>
+      <p style="margin-bottom:12px;">Welcome to <strong>Brundavan Natural Farms</strong>. By browsing our farm store and placing an order, you agree to purchase authentic, small-batch farm produce harvested according to ethical Vedic standards.</p>
+      <p style="margin-bottom:12px;">All prices listed on our platform are in Indian Rupees (INR) and inclusive of statutory taxes. Because our products are 100% natural with zero artificial preservatives or chemical stabilizers, slight variations in natural color, batch aroma, and seasonal consistency reflect authentic artisanal preparation.</p>
     `;
   } else if (type === "shipping") {
-    titleEl.textContent = "Shipping Policy";
+    titleEl.textContent = "Shipping & Delivery Policy";
     bodyEl.innerHTML = `
-      <p style="margin-bottom:12px;"><strong>Direct Farm Delivery:</strong> We ensure same-day dispatch for city deliveries in temperature-controlled sustainable packaging. Free shipping is provided for all orders exceeding ₹999.</p>
+      <p style="margin-bottom:12px;"><strong>Direct Farm Fresh Dispatch:</strong> All orders are packed in sanitized, food-grade glass, earthenware, and insulated sustainable containers directly at our Gaushala in Warangal, Telangana.</p>
+      <p style="margin-bottom:12px;">Fresh milk and curd are dispatched daily in temperature-controlled early morning delivery routes. Vedic Bilona Ghee, wood cold-pressed oils, dry fruits, and dry powders are delivered nationwide via premium express couriers within 2-4 business days.</p>
+      <p style="margin-bottom:12px;font-weight:600;color:var(--forest-green);">Enjoy FREE Delivery on all orders across India above ₹999.</p>
     `;
   } else if (type === "refund") {
-    titleEl.textContent = "Refund Policy";
+    titleEl.textContent = "100% Purity & Replacement Policy";
     bodyEl.innerHTML = `
-      <p style="margin-bottom:12px;"><strong>100% Satisfaction Guarantee:</strong> If any farm fresh dairy product or cold-pressed oil does not meet your expectations, we offer hassle-free replacements or refunds within 24 hours of delivery.</p>
+      <p style="margin-bottom:12px;"><strong>Our Guarantee to Your Family:</strong> If any product from Brundavan Natural Farms reaches you damaged, broken in transit, or fails to meet our strict purity standards, please contact our helpline on WhatsApp (+91 98765 43210) within 24 hours of delivery.</p>
+      <p style="margin-bottom:12px;">We will immediately arrange a hassle-free fresh replacement or process a full refund to your original payment mode without complicated procedures.</p>
     `;
   }
 
@@ -810,25 +839,97 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Highlight current nav section on scroll
-  const sections = document.querySelectorAll("section[id]");
-  window.addEventListener("scroll", () => {
-    const scrollY = window.pageYOffset;
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute("id");
-      const navLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
-      if (navLink) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
-          navLink.classList.add("active");
+  // Highlight current nav section on scroll (for home page anchors)
+  const currentPath = window.location.pathname;
+  const isHomePage = currentPath.endsWith("index.html") || currentPath.endsWith("/") || currentPath === "" || (!currentPath.includes(".html"));
+  if (isHomePage) {
+    const sections = document.querySelectorAll("section[id]");
+    window.addEventListener("scroll", () => {
+      const scrollY = window.pageYOffset;
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 140;
+        const sectionId = current.getAttribute("id");
+        const navLink = document.querySelector(`.nav-link[href*="#${sectionId}"]`);
+        if (navLink) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
+            navLink.classList.add("active");
+          }
         }
-      }
+      });
     });
-  });
+  }
 
   // Initialize UI
   updateCartUI();
-  console.log("Brundavan Natural Farms — Ready with Video Animation & Product Updates.");
+  console.log("Brundavan Natural Farms — Official Multi-Page Store Active.");
 });
+
+// ============================================================================
+// 10. PRODUCT CATEGORY FILTER (FOR PRODUCTS.HTML)
+// ============================================================================
+function filterProductCategory(category) {
+  const buttons = document.querySelectorAll(".product-filter-btn");
+  buttons.forEach(btn => {
+    if (btn.getAttribute("data-category") === category) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+
+  const cards = document.querySelectorAll(".product-card");
+  cards.forEach(card => {
+    const cardCat = card.getAttribute("data-category");
+    if (category === "all" || cardCat === category) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// ============================================================================
+// 11. GALLERY CATEGORY FILTER (FOR GALLERY.HTML)
+// ============================================================================
+function filterGalleryCategory(category) {
+  const buttons = document.querySelectorAll(".gallery-filter-btn");
+  buttons.forEach(btn => {
+    if (btn.getAttribute("data-filter") === category) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+
+  const items = document.querySelectorAll(".gallery-grid-card");
+  items.forEach(item => {
+    const itemCat = item.getAttribute("data-category");
+    if (category === "all" || itemCat === category) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+// ============================================================================
+// 12. CONTACT FORM SUBMISSION HANDLER
+// ============================================================================
+function handleContactSubmit(e) {
+  if (e) e.preventDefault();
+  const nameInput = document.getElementById("contactName");
+  const phoneInput = document.getElementById("contactPhone");
+  const msgInput = document.getElementById("contactMessage");
+
+  const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : "Friend";
+  showToast("Message Received! 🌿", `Thank you, ${name}. Our farm care team will contact you shortly.`);
+
+  if (nameInput) nameInput.value = "";
+  if (phoneInput) phoneInput.value = "";
+  if (msgInput) msgInput.value = "";
+  const emailInput = document.getElementById("contactEmail");
+  if (emailInput) emailInput.value = "";
+}
+

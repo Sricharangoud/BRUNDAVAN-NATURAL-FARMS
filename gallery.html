@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Gallery — Brundavan Natural Farms | Gir Cows, Pastures &amp; Vedic Craft</title>
+  <meta name="description" content="Explore real moments from Brundavan Natural Farms in Warangal, Telangana. Browse our pure Gir cows, verdant open pastures, traditional Vedic bilona preparation, and harvest.">
+  
+  <!-- Google Fonts: Playfair Display & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <div class="top-announcement" id="topBanner">
+    <div class="announcement-content">
+      <span class="badge-pill">Farm Direct</span>
+      <span class="announcement-text">Pure Desi Gir Cow A2 Dairy &bull; Traditional Wood Cold-Pressed Oils &bull; Vedic Bilona Ghee &bull; Free Delivery Above &#8377;999</span>
+      <a href="products.html" class="announcement-link">Shop Farm Fresh &rarr;</a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="brand-logo" aria-label="Brundavan Natural Farms Home">
+        <div class="logo-image-badge">
+          <img src="images/brundavan_logo_badge.png" alt="Brundavan Natural Farms Logo" class="brand-logo-img">
+        </div>
+        <div class="logo-text-group">
+          <span class="brand-title">BRUNDAVAN</span>
+          <span class="brand-subtitle">NATURAL FARMS</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAVIGATION LINKS -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="farm.html" class="nav-link">Our Farm</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="process.html" class="nav-link">Our Process</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- HEADER ACTIONS -->
+      <div class="header-actions">
+        <button class="action-btn" id="searchTriggerBtn" title="Search Products" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button class="action-btn cart-btn" id="cartTriggerBtn" title="Shopping Cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
+        </button>
+
+        <a href="products.html" class="btn btn-primary nav-shop-btn">
+          <span>SHOP NOW</span>
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO BANNER -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-container">
+      <span class="subpage-tagline">📸 LIFE AT BRUNDAVAN &bull; AUTHENTIC FARM VISUALS 📸</span>
+      <h1 class="subpage-title">Our Farm Gallery</h1>
+      <p class="subpage-desc">
+        Take a visual walk through Brundavan Natural Farms in Warangal, Telangana. See our indigenous Gir cows enjoying open pastures, the gentle Ahimsa milking routine, sacred wooden bilona churning, and pure harvests.
+      </p>
+      <nav class="subpage-breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">&rsaquo;</span>
+        <span class="current">Gallery</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION WITH FILTER TABS -->
+  <section style="padding: 60px 0 80px; background: var(--white);">
+    <div class="container">
+      
+      <!-- CATEGORY FILTER TABS -->
+      <div class="filter-tabs-wrapper">
+        <button class="gallery-filter-btn filter-tab-btn active" data-filter="all" onclick="filterGalleryCategory('all')">
+          All Moments (15)
+        </button>
+        <button class="gallery-filter-btn filter-tab-btn" data-filter="cows" onclick="filterGalleryCategory('cows')">
+          Gir Cows &amp; Sanctuary
+        </button>
+        <button class="gallery-filter-btn filter-tab-btn" data-filter="pasture" onclick="filterGalleryCategory('pasture')">
+          Pastures &amp; Farm Life
+        </button>
+        <button class="gallery-filter-btn filter-tab-btn" data-filter="process" onclick="filterGalleryCategory('process')">
+          Vedic Process
+        </button>
+        <button class="gallery-filter-btn filter-tab-btn" data-filter="products" onclick="filterGalleryCategory('products')">
+          Farm Harvest &amp; Products
+        </button>
+      </div>
+
+      <!-- DEDICATED GALLERY GRID -->
+      <div class="gallery-dedicated-grid" id="galleryGrid">
+        
+        <!-- ITEM 1 -->
+        <div class="gallery-grid-card" data-category="cows" onclick="openGalleryLightbox('images/farmer_cow_hd.jpg', 'Indigenous Gir Cow &amp; Gau-Sevak', 'Deep bond of reverence between our indigenous Gir cows and caring farm stewards in Warangal.', 'Gir Cows')">
+          <img src="images/farmer_cow_hd.jpg" alt="Indigenous Gir Cow with Farmer" loading="lazy">
+          <span class="gallery-card-badge">Gir Cows</span>
+          <div class="gallery-card-caption">
+            <h4>Indigenous Gir Cow &amp; Gau-Sevak</h4>
+            <p>Nurtured with Vedic affection and daily mantra chanting</p>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="gallery-grid-card" data-category="pasture" onclick="openGalleryLightbox('images/gir_cows_meadow.jpg', 'Morning Pasture Grazing', 'Cows grazing under the morning sun on organic Napier and sweet grass pastures.', 'Pastures')">
+          <img src="images/gir_cows_meadow.jpg" alt="Gir Cows Grazing in Meadow" loading="lazy">
+          <span class="gallery-card-badge">Pastures</span>
+          <div class="gallery-card-caption">
+            <h4>Morning Pasture Grazing</h4>
+            <p>Sunlight exposure activates the sacred Surya Ketu Nadi</p>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="gallery-grid-card" data-category="process" onclick="openGalleryLightbox('images/step1_milk_collection.jpg', 'Ahimsa Milking at Dawn', 'Calves are fed first from mother cows before collecting sacred A2 milk.', 'Vedic Process')">
+          <img src="images/step1_milk_collection.jpg" alt="Ahimsa Milk Collection" loading="lazy">
+          <span class="gallery-card-badge">Vedic Process</span>
+          <div class="gallery-card-caption">
+            <h4>Ahimsa Milking at Dawn</h4>
+            <p>Non-violent collection into sterilized traditional vessels</p>
+          </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="gallery-grid-card" data-category="process" onclick="openGalleryLightbox('images/curd.jpg', 'Clay Pot Whole Curd', 'Whole Gir cow A2 milk cultured overnight into dense, prebiotic-rich curd.', 'Vedic Process')">
+          <img src="images/curd.jpg" alt="Clay Pot Whole Curd" loading="lazy">
+          <span class="gallery-card-badge">Vedic Process</span>
+          <div class="gallery-card-caption">
+            <h4>Clay Pot Whole Curd</h4>
+            <p>12-hour earthen pot fermentation with heirloom culture</p>
+          </div>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="gallery-grid-card" data-category="process" onclick="openGalleryLightbox('images/bilona_step3.jpg', 'Two-Way Wooden Bilona Staff', 'Traditional bi-directional churning separates golden makkhan gently.', 'Vedic Process')">
+          <img src="images/bilona_step3.jpg" alt="Wooden Bilona Churning" loading="lazy">
+          <span class="gallery-card-badge">Vedic Process</span>
+          <div class="gallery-card-caption">
+            <h4>Two-Way Wooden Bilona Staff</h4>
+            <p>Clockwise &amp; counter-clockwise vortex at Brahma Muhurta</p>
+          </div>
+        </div>
+
+        <!-- ITEM 6 -->
+        <div class="gallery-grid-card" data-category="process" onclick="openGalleryLightbox('images/butter_fresh.jpg', 'Golden Makkhan Separation', 'Silky, aromatic farm butter ready for gentle melting in heavy brass cauldrons.', 'Vedic Process')">
+          <img src="images/butter_fresh.jpg" alt="Golden Butter Separation" loading="lazy">
+          <span class="gallery-card-badge">Vedic Process</span>
+          <div class="gallery-card-caption">
+            <h4>Golden Makkhan Separation</h4>
+            <p>Rich in healthy milk fats, separated from probiotic buttermilk</p>
+          </div>
+        </div>
+
+        <!-- ITEM 7 -->
+        <div class="gallery-grid-card" data-category="process" onclick="openGalleryLightbox('images/ghee_making_simmer.jpg', 'Brass Vessel Simmering', 'Slow wood-fired heating transforms makkhan into clear golden Vedic ghee.', 'Vedic Process')">
+          <img src="images/ghee_making_simmer.jpg" alt="Simmering Makkhan in Brass" loading="lazy">
+          <span class="gallery-card-badge">Vedic Process</span>
+          <div class="gallery-card-caption">
+            <h4>Brass Vessel Simmering</h4>
+            <p>Gentle boiling until water evaporates into nutty aroma</p>
+          </div>
+        </div>
+
+        <!-- ITEM 8 -->
+        <div class="gallery-grid-card" data-category="products" onclick="openGalleryLightbox('images/product_ghee.jpg', 'Danedaar Vedic Bilona Ghee', 'Handcrafted granular A2 ghee bottled in sterilized UV-protected glass jars.', 'Products')">
+          <img src="images/product_ghee.jpg" alt="Vedic Bilona Ghee Jar" loading="lazy">
+          <span class="gallery-card-badge">Products</span>
+          <div class="gallery-card-caption">
+            <h4>Danedaar Vedic Bilona Ghee</h4>
+            <p>Authentic golden granular texture and rich therapeutic aroma</p>
+          </div>
+        </div>
+
+        <!-- ITEM 9 -->
+        <div class="gallery-grid-card" data-category="pasture" onclick="openGalleryLightbox('images/cows_pasture.jpg', 'Warangal Farm Sanctuary', 'Over 25 acres of lush natural landscape dedicated to free-roaming Gir cows.', 'Pastures')">
+          <img src="images/cows_pasture.jpg" alt="Warangal Pastures" loading="lazy">
+          <span class="gallery-card-badge">Pastures</span>
+          <div class="gallery-card-caption">
+            <h4>Warangal Farm Sanctuary</h4>
+            <p>25+ acres of pesticide-free green grazing grounds</p>
+          </div>
+        </div>
+
+        <!-- ITEM 10 -->
+        <div class="gallery-grid-card" data-category="pasture" onclick="openGalleryLightbox('images/farm_dairy.jpg', 'Ethical Gaushala Sheds', 'Spacious, well-ventilated, cruelty-free home for mother cows and calves.', 'Pastures')">
+          <img src="images/farm_dairy.jpg" alt="Ethical Gaushala Sheds" loading="lazy">
+          <span class="gallery-card-badge">Pastures</span>
+          <div class="gallery-card-caption">
+            <h4>Ethical Gaushala Sheds</h4>
+            <p>Hygiene, ventilation, and natural bedding for all cattle</p>
+          </div>
+        </div>
+
+        <!-- ITEM 11 -->
+        <div class="gallery-grid-card" data-category="products" onclick="openGalleryLightbox('images/packing_jars.jpg', 'Artisanal Hand Packaging', 'Every glass jar is hand-inspected, sealed, and packaged with care.', 'Products')">
+          <img src="images/packing_jars.jpg" alt="Packaging Glass Jars" loading="lazy">
+          <span class="gallery-card-badge">Products</span>
+          <div class="gallery-card-caption">
+            <h4>Artisanal Hand Packaging</h4>
+            <p>Zero single-use plastic &bull; Sealed in food-grade glass</p>
+          </div>
+        </div>
+
+        <!-- ITEM 12 -->
+        <div class="gallery-grid-card" data-category="cows" onclick="openGalleryLightbox('images/farmer_cows.jpg', 'Loving Gau-Seva Tradition', 'Generations of indigenous cow care knowledge passed down with deep reverence.', 'Gir Cows')">
+          <img src="images/farmer_cows.jpg" alt="Loving Gau Seva Tradition" loading="lazy">
+          <span class="gallery-card-badge">Gir Cows</span>
+          <div class="gallery-card-caption">
+            <h4>Loving Gau-Seva Tradition</h4>
+            <p>Treating every cow as sacred family member (*Gau Mata*)</p>
+          </div>
+        </div>
+
+        <!-- ITEM 13 -->
+        <div class="gallery-grid-card" data-category="products" onclick="openGalleryLightbox('images/oils.jpg', 'Wood Cold-Pressed Oils', 'Extracted under 45°C in Vaagai wooden mills without any chemical refining.', 'Products')">
+          <img src="images/oils.jpg" alt="Wood Cold Pressed Oils" loading="lazy">
+          <span class="gallery-card-badge">Products</span>
+          <div class="gallery-card-caption">
+            <h4>Wood Cold-Pressed Oils</h4>
+            <p>Slow Chekku expeller preserving all natural nutrients &amp; vitamin E</p>
+          </div>
+        </div>
+
+        <!-- ITEM 14 -->
+        <div class="gallery-grid-card" data-category="products" onclick="openGalleryLightbox('images/product_milk.jpg', 'Pure A2 Gir Cow Milk', 'Fresh raw whole milk delivered in chilled glass bottles to doorstep.', 'Products')">
+          <img src="images/product_milk.jpg" alt="Pure A2 Gir Cow Milk" loading="lazy">
+          <span class="gallery-card-badge">Products</span>
+          <div class="gallery-card-caption">
+            <h4>Pure A2 Gir Cow Milk</h4>
+            <p>Chilled farm-fresh daily delivery &bull; Never recombined</p>
+          </div>
+        </div>
+
+        <!-- ITEM 15 -->
+        <div class="gallery-grid-card" data-category="products" onclick="openGalleryLightbox('images/product_dryfruits.jpg', 'Supreme Dry Fruits &amp; Powders', 'Wholesome sun-dried staples stone-milled with ancient artisanal care.', 'Products')">
+          <img src="images/product_dryfruits.jpg" alt="Supreme Dry Fruits" loading="lazy">
+          <span class="gallery-card-badge">Products</span>
+          <div class="gallery-card-caption">
+            <h4>Supreme Dry Fruits &amp; Powders</h4>
+            <p>Unsulfured, natural whole nuts and slow-milled spice powders</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FARM VISIT PHOTO BANNER -->
+      <div style="margin-top: 60px; background: linear-gradient(135deg, var(--forest-green), var(--dark-green)); border-radius: 24px; padding: 48px; color: #FFF; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+        <div style="max-width: 620px;">
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--gold-accent); letter-spacing: 0.1em; text-transform: uppercase;">WELCOME TO OUR PASTURES</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin: 8px 0 12px; color: #FFF;">Experience Brundavan in Person</h3>
+          <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+            Bring your children and family to witness the Ahimsa milking, feed fresh grass to Gir calves, and drink warm fresh A2 milk. Gaushala visits are open every morning from 6:30 AM.
+          </p>
+        </div>
+        <div>
+          <a href="#contact" class="btn btn-gold" style="padding: 14px 28px; font-size: 0.95rem;">
+            <span>Schedule Family Visit &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & GAUSHALA LOCATION SECTION -->
+  <section class="contact-section" id="contact" style="background-color: var(--light-cream); padding: 80px 0;">
+    <div class="container">
+      
+      <div class="text-center" style="margin-bottom: 48px;">
+        <span class="section-subtitle">VISIT OR ORDER DIRECT</span>
+        <h2 class="section-title">Connect with Brundavan Natural Farms</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+          Contact our farm team in Warangal, Telangana for product orders, daily delivery subscriptions, or to plan your weekend Gaushala visit.
+        </p>
+      </div>
+
+      <div class="contact-grid-layout" style="display:grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start;">
+        
+        <!-- Contact Cards Column -->
+        <div class="contact-info-column" style="display:flex; flex-direction:column; gap:20px;">
+          
+          <div class="farm-benefit-card" style="padding:24px;">
+            <div style="font-size:1.8rem; margin-bottom:8px;">📍</div>
+            <h4 style="font-family:var(--font-serif); color:var(--dark-green); margin-bottom:6px;">Farm &amp; Sanctuary Address</h4>
+            <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6;">
+              Brundavan Natural Farms, Gaushala Marg,<br>
+              Near Kakatiya Heritage Canal, Warangal,<br>
+              Telangana &mdash; 506001, India.
+            </p>
+          </div>
+
+          <div class="farm-benefit-card" style="padding:24px;">
+            <div style="font-size:1.8rem; margin-bottom:8px;">📞</div>
+            <h4 style="font-family:var(--font-serif); color:var(--dark-green); margin-bottom:6px;">Order Helpline &amp; WhatsApp</h4>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:10px;">
+              Phone: <strong>+91 98765 43210</strong><br>
+              Email: <strong>info@brundavannaturalfarms.in</strong>
+            </p>
+            <a href="https://wa.me/919876543210?text=Hello%20Brundavan%20Natural%20Farms%2C%20I%20would%20like%20to%20plan%20a%20farm%20visit." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="display:inline-flex;">
+              <span>Message on WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="farm-benefit-card" style="padding:24px;">
+            <div style="font-size:1.8rem; margin-bottom:8px;">🕒</div>
+            <h4 style="font-family:var(--font-serif); color:var(--dark-green); margin-bottom:6px;">Visiting Hours</h4>
+            <p style="color:var(--text-secondary); font-size:0.95rem; line-height:1.6;">
+              Daily: 6:00 AM &ndash; 6:30 PM<br>
+              <em>Morning Milking Darshan: 6:30 AM &ndash; 8:00 AM</em>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-card" style="background:var(--white); border-radius:20px; padding:36px; border:1px solid var(--border-light); box-shadow:var(--shadow-md);">
+          <h3 style="font-family:var(--font-serif); color:var(--dark-green); margin-bottom:8px;">Send a Visit Request or Inquiry</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:24px;">Our farm staff will contact you to confirm timings and directions.</p>
+
+          <form onsubmit="handleContactSubmit(event)">
+            <div class="form-group-field">
+              <label for="contactName">Your Name *</label>
+              <input type="text" id="contactName" required placeholder="e.g. Ramesh Kumar" class="form-input-control">
+            </div>
+
+            <div class="form-row-2col">
+              <div class="form-group-field">
+                <label for="contactPhone">Phone / WhatsApp *</label>
+                <input type="tel" id="contactPhone" required placeholder="+91 98765 43210" class="form-input-control">
+              </div>
+              <div class="form-group-field">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" placeholder="you@example.com" class="form-input-control">
+              </div>
+            </div>
+
+            <div class="form-group-field">
+              <label for="contactMessage">Details of Visit or Order *</label>
+              <textarea id="contactMessage" required rows="4" placeholder="e.g. Family visit of 4 adults & 2 kids this Sunday, or daily milk delivery request..." class="form-input-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; font-size:1rem; margin-top:8px;">
+              <span>Submit Request &rarr;</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <div class="logo-image-badge">
+              <img src="images/brundavan_logo_badge.png" alt="Brundavan Logo" class="brand-logo-img">
+            </div>
+            <div>
+              <span class="footer-brand-title">BRUNDAVAN</span>
+              <span class="footer-brand-sub">NATURAL FARMS</span>
+            </div>
+          </div>
+          
+          <p class="footer-mission">
+            "Rooted in Nature, Committed to Purity" &mdash; Nurturing families with uncompromised traditional dairy, cold-pressed oils, and farm harvests crafted with Vedic reverence.
+          </p>
+
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram" title="Follow on Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube" title="Watch on YouTube">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook" title="Visit Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="farm.html">Our Farm</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="process.html">Our Process</a></li>
+            <li><a href="gallery.html">Farm Gallery</a></li>
+            <li><a href="#contact">Contact &amp; Gaushala</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Our Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">A2 Gir Cow Milk</a></li>
+            <li><a href="products.html">Clay Pot Curd</a></li>
+            <li><a href="products.html">Vedic Bilona Ghee</a></li>
+            <li><a href="products.html">Wood Cold-Pressed Oil</a></li>
+            <li><a href="products.html">Supreme Dry Fruits</a></li>
+            <li><a href="products.html">Artisanal Dry Powders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="contact-entry">
+            <span class="contact-icon">📍</span>
+            <div class="contact-text">Warangal, Telangana, India</div>
+          </div>
+          <div class="contact-entry">
+            <span class="contact-icon">📞</span>
+            <div class="contact-text">+91 98765 43210</div>
+          </div>
+          <div class="contact-entry">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-text">info@brundavannaturalfarms.in</div>
+          </div>
+          <div class="whatsapp-box" style="margin-top:14px;">
+            <a href="https://wa.me/919876543210?text=Hi%20Brundavan%20Natural%20Farms%2C%20I%20am%20interested%20in%20your%20pure%20farm%20products." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright-text">
+          &copy; 2026 <strong>Brundavan Natural Farms</strong>. All Rights Reserved. &bull; 
+          <span class="purity-tagline">Rooted in Nature &bull; Committed to Purity</span>
+        </p>
+        <ul class="legal-links">
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('privacy')">Privacy Policy</a></li>
+          <li><span class="sep">&bull;</span></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('terms')">Terms &amp; Conditions</a></li>
+          <li><span class="sep">&bull;</span></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('shipping')">Shipping Policy</a></li>
+          <li><span class="sep">&bull;</span></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('refund')">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP CHAT BUTTON -->
+  <a href="https://wa.me/919876543210?text=Hi%20Brundavan%20Natural%20Farms%2C%20I%20have%20an%20enquiry%20regarding%20your%20farm%20products." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-btn" 
+     title="Chat with us on WhatsApp" 
+     aria-label="WhatsApp Chat">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
+      <path d="M12.031 2C6.5 2 2.016 6.484 2.016 12.015c0 1.77.464 3.492 1.348 5.02L2 22l5.129-1.344a9.98 9.98 0 0 0 4.902 1.289h.004c5.531 0 10.016-4.484 10.016-10.016C22.05 6.484 17.566 2 12.031 2zm5.836 14.184c-.242.684-1.215 1.309-1.996 1.477-.535.113-1.234.207-3.582-.766-2.996-1.242-4.93-4.285-5.082-4.484-.148-.203-1.215-1.617-1.215-3.086 0-1.469.766-2.195 1.04-2.488.273-.297.597-.371.796-.371.199 0 .402.004.575.012.187.008.437-.07.683.52.25.602.852 2.074.926 2.227.074.152.125.332.023.535-.098.2-.152.324-.301.504-.152.176-.324.394-.461.531-.152.148-.313.312-.137.613.176.297.785 1.293 1.684 2.094 1.156 1.031 2.133 1.352 2.434 1.504.301.148.477.125.656-.078.176-.207.766-.891.969-1.195.203-.305.406-.254.684-.152.277.098 1.762.832 2.066.984.305.152.508.227.582.355.074.125.074.734-.168 1.418z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Enquire on WhatsApp</span>
+  </a>
+
+  <!-- GALLERY LIGHTBOX MODAL -->
+  <div class="modal-backdrop" id="galleryLightboxModal" style="display:none; align-items:center; justify-content:center;" onclick="if(event.target === this) closeGalleryLightbox()">
+    <div style="position:relative; max-width:850px; width:92%; background:var(--white); border-radius:24px; overflow:hidden; box-shadow:var(--shadow-xl);">
+      <button class="modal-close-btn" onclick="closeGalleryLightbox()" style="position:absolute; top:16px; right:16px; z-index:10; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; width:36px; height:36px; border:none; font-size:1.4rem; cursor:pointer; display:flex; align-items:center; justify-content:center;">&times;</button>
+      <div style="max-height:68vh; overflow:hidden; background:#000; display:flex; align-items:center; justify-content:center;">
+        <img src="" alt="" id="lightboxImg" style="max-width:100%; max-height:68vh; object-fit:contain; display:block;">
+      </div>
+      <div style="padding:22px 28px; background:var(--white);">
+        <span class="gallery-card-badge" id="lightboxBadge" style="position:static; display:inline-block; margin-bottom:10px;">Gir Cows</span>
+        <h3 id="lightboxTitle" style="font-family:var(--font-serif); color:var(--dark-green); margin-bottom:6px; font-size:1.35rem;">Photo Title</h3>
+        <p id="lightboxDesc" style="color:var(--text-secondary); font-size:0.95rem; margin:0;">Photo description.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDEOUT CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Basket">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h3>Your Farm Basket</h3>
+        <span class="cart-count-badge" id="cartDrawerCount">0 items</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Close Cart">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartItemsList">
+      <div class="empty-cart-view" id="emptyCartView">
+        <div class="empty-cart-icon">🧺</div>
+        <h4>Your basket is currently empty</h4>
+        <p>Explore our pure farm harvest categories: Milk, Curd, Ghee, Oils, Dry Fruits, and Dry Powders.</p>
+        <button class="btn btn-primary btn-sm" onclick="closeCart(); location.href='products.html'">Browse Products</button>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="cart-pricing-summary">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">&#8377;0</span>
+        </div>
+        <div class="summary-line">
+          <span>Delivery</span>
+          <span class="free-text">FREE</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Total</span>
+          <span id="cartTotal">&#8377;0</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-block checkout-action-btn" onclick="openCheckoutModal()">
+        <span>Proceed to Order</span>
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </button>
+      <p class="cart-purity-note" style="color:var(--forest-green);font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        100% Purity Assured &bull; Direct Farm Fresh Delivery
+      </p>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="generic-modal-container checkout-modal-container">
+      <div class="generic-modal-header checkout-modal-header">
+        <div class="checkout-header-title">
+          <span class="checkout-step-badge">Checkout</span>
+          <h3 class="modal-heading" style="margin-bottom:0;">Complete Your Farm Order</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeCheckoutModal()">&times;</button>
+      </div>
+      <div class="generic-modal-body checkout-modal-body">
+        <form id="checkoutForm" onsubmit="handlePlaceOrder(event); return false;">
+          <div class="checkout-grid">
+            <div class="checkout-form-col">
+              <h4 class="checkout-section-title">Delivery Information</h4>
+              <div class="form-group-field">
+                <label for="custName">Full Name *</label>
+                <input type="text" id="custName" required placeholder="e.g. Ramesh Kumar" class="form-input-control" value="Ramesh Kumar">
+              </div>
+              <div class="form-row-2col">
+                <div class="form-group-field">
+                  <label for="custPhone">Phone / WhatsApp *</label>
+                  <input type="tel" id="custPhone" required placeholder="+91 98765 43210" class="form-input-control" value="+91 98765 43210">
+                </div>
+                <div class="form-group-field">
+                  <label for="custPincode">Delivery Pincode *</label>
+                  <input type="text" id="custPincode" required placeholder="506001" maxlength="6" class="form-input-control" value="506001">
+                </div>
+              </div>
+              <div class="form-group-field">
+                <label for="custAddress">Complete Street Address *</label>
+                <textarea id="custAddress" required rows="2" placeholder="House/Flat No, Landmark, Colony, City" class="form-input-control">Plot No. 42, Green Avenue, Hanamkonda, Warangal, Telangana</textarea>
+              </div>
+              
+              <h4 class="checkout-section-title" style="margin-top:18px;">Payment Mode</h4>
+              <div class="payment-method-selector">
+                <label class="payment-option-card active" id="payOptionCod" onclick="selectPaymentOption('cod')">
+                  <input type="radio" name="paymentMethod" value="Cash on Delivery (COD)" checked>
+                  <div class="payment-option-info">
+                    <strong>Cash on Delivery (COD)</strong>
+                    <span>Pay in cash or scan UPI upon doorstep delivery</span>
+                  </div>
+                  <span class="pay-icon">💵</span>
+                </label>
+                <label class="payment-option-card" id="payOptionUpi" onclick="selectPaymentOption('upi')">
+                  <input type="radio" name="paymentMethod" value="UPI / Online Payment">
+                  <div class="payment-option-info">
+                    <strong>UPI / Online Payment</strong>
+                    <span>Google Pay, PhonePe, Paytm, or Netbanking</span>
+                  </div>
+                  <span class="pay-icon">⚡</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="checkout-summary-col">
+              <h4 class="checkout-section-title">Order Items</h4>
+              <div class="checkout-items-preview" id="checkoutItemsPreview">
+                <!-- Dynamically populated -->
+              </div>
+              
+              <div class="checkout-price-card">
+                <div class="checkout-price-row">
+                  <span>Items Subtotal</span>
+                  <span id="checkoutSubtotal">&#8377;0</span>
+                </div>
+                <div class="checkout-price-row">
+                  <span>Farm Express Delivery</span>
+                  <span style="color:#16A34A;font-weight:700;">FREE</span>
+                </div>
+                <div class="checkout-price-row total-row">
+                  <span>Total Amount</span>
+                  <span id="checkoutTotal" style="color:var(--dark-green);font-size:1.25rem;font-weight:800;">&#8377;0</span>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block checkout-submit-btn" id="placeOrderSubmitBtn" onclick="handlePlaceOrder(event)">
+                <span>Confirm &amp; Place Order</span>
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </button>
+
+              <div class="checkout-guarantee-note">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#16A34A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Directly sourced from pasture-grazed Gir cows &amp; traditional wooden churns</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS & INVOICE MODAL -->
+  <div class="modal-backdrop" id="invoiceModal">
+    <div class="generic-modal-container invoice-modal-container">
+      <div class="invoice-modal-header">
+        <div class="success-banner">
+          <div class="success-checkmark-circle">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FFFFFF" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h3 class="success-title">Order Placed Successfully! 🎉</h3>
+            <p class="success-subtitle">Thank you! Your order is confirmed and will be dispatched fresh from our farm.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn invoice-close-btn" onclick="closeInvoiceModal()">&times;</button>
+      </div>
+
+      <div class="generic-modal-body invoice-modal-body">
+        <div class="invoice-sheet" id="invoiceSheet">
+          
+          <div class="invoice-header">
+            <div class="invoice-brand">
+              <div class="invoice-logo-group">
+                <img src="images/brundavan_logo_badge.png" alt="Brundavan Natural Farms" class="invoice-logo-img">
+                <div>
+                  <h2 class="invoice-brand-name">BRUNDAVAN NATURAL FARMS</h2>
+                  <p class="invoice-tagline">Rooted in Nature, Committed to Purity</p>
+                </div>
+              </div>
+              <div class="invoice-contact-meta">
+                <p>📍 Warangal, Telangana &mdash; 506001, India</p>
+                <p>📞 +91 98765 43210 &bull; ✉️ info@brundavannaturalfarms.in</p>
+                <p>FSSAI Lic. No: <strong>13624999000123</strong> (Verified)</p>
+              </div>
+            </div>
+
+            <div class="invoice-meta-card">
+              <span class="tax-invoice-pill">TAX INVOICE / CASH MEMO</span>
+              <table class="invoice-meta-table">
+                <tr>
+                  <td><strong>Invoice No:</strong></td>
+                  <td id="invNumber">BNF-2026-8492</td>
+                </tr>
+                <tr>
+                  <td><strong>Date &amp; Time:</strong></td>
+                  <td id="invDate">16 Oct 2026, 11:30 AM</td>
+                </tr>
+                <tr>
+                  <td><strong>Order Status:</strong></td>
+                  <td><span class="status-confirmed-badge">&#10003; ORDER CONFIRMED</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Payment Mode:</strong></td>
+                  <td id="invPaymentMode">Cash on Delivery</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="invoice-divider"></div>
+
+          <div class="invoice-customer-row">
+            <div class="customer-bill-box">
+              <h5 class="bill-heading">DELIVER TO (CUSTOMER)</h5>
+              <p class="cust-name-val" id="invCustName">Ramesh Kumar</p>
+              <p class="cust-phone-val" id="invCustPhone">+91 98765 43210</p>
+              <p class="cust-addr-val" id="invCustAddress">Warangal, Telangana</p>
+            </div>
+            <div class="customer-farm-box">
+              <h5 class="bill-heading">DISPATCH LOCATION</h5>
+              <p><strong>Brundavan Gaushala &amp; Pastures</strong></p>
+              <p>Ethical A2 Gir Cow Natural Dairy Unit</p>
+              <p>Delivery: Insulated Fresh Farm Express</p>
+            </div>
+          </div>
+
+          <div class="invoice-table-wrapper">
+            <table class="invoice-items-table">
+              <thead>
+                <tr>
+                  <th style="width:40px;">#</th>
+                  <th>Product Description</th>
+                  <th style="width:110px;">Unit</th>
+                  <th style="width:70px;text-align:center;">Qty</th>
+                  <th style="width:110px;text-align:right;">Rate (&#8377;)</th>
+                  <th style="width:110px;text-align:right;">Amount (&#8377;)</th>
+                </tr>
+              </thead>
+              <tbody id="invItemsTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="invoice-summary-grid">
+            <div class="invoice-words-note">
+              <p><strong>Amount in Words:</strong></p>
+              <p class="words-val" id="invAmountInWords">Indian Rupees Only</p>
+              <div class="purity-promise-box">
+                <p>🌿 <strong>Authenticity Pledge:</strong> 100% pure, chemical-free &amp; ethically sourced from indigenous Gir cows and traditional wooden churns. No synthetic additives or preservatives.</p>
+              </div>
+            </div>
+
+            <div class="invoice-totals-box">
+              <div class="inv-sum-row">
+                <span>Items Subtotal:</span>
+                <span id="invSubtotal">&#8377;0</span>
+              </div>
+              <div class="inv-sum-row">
+                <span>Delivery / Freight:</span>
+                <span style="color:#16A34A;font-weight:700;">FREE (&#8377;0.00)</span>
+              </div>
+              <div class="inv-sum-row">
+                <span>Taxes &amp; Packaging:</span>
+                <span>Included (GST Paid)</span>
+              </div>
+              <div class="inv-sum-row inv-grand-total-row">
+                <span>Grand Total:</span>
+                <span id="invGrandTotal">&#8377;0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="invoice-sheet-footer">
+            <div class="terms-block">
+              <p>&bull; This is an authentic digital invoice generated by Brundavan Natural Farms.</p>
+              <p>&bull; For support or delivery queries, WhatsApp/Call +91 98765 43210.</p>
+            </div>
+            <div class="signature-block">
+              <div class="signature-line"></div>
+              <p><strong>Authorized Signatory</strong></p>
+              <p class="brand-sig">Brundavan Natural Farms</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="invoice-actions-bar">
+          <button class="btn btn-outline-green" onclick="printInvoiceDoc()">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Print / Save Invoice (PDF)</span>
+          </button>
+          
+          <button class="btn btn-whatsapp" onclick="sendInvoiceToWhatsApp()">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.031 2C6.5 2 2.016 6.484 2.016 12.015c0 1.77.464 3.492 1.348 5.02L2 22l5.129-1.344a9.98 9.98 0 0 0 4.902 1.289h.004c5.531 0 10.016-4.484 10.016-10.016C22.05 6.484 17.566 2 12.031 2zm5.836 14.184c-.242.684-1.215 1.309-1.996 1.477-.535.113-1.234.207-3.582-.766-2.996-1.242-4.93-4.285-5.082-4.484-.148-.203-1.215-1.617-1.215-3.086 0-1.469.766-2.195 1.04-2.488.273-.297.597-.371.796-.371.199 0 .402.004.575.012.187.008.437-.07.683.52.25.602.852 2.074.926 2.227.074.152.125.332.023.535-.098.2-.152.324-.301.504-.152.176-.324.394-.461.531-.152.148-.313.312-.137.613.176.297.785 1.293 1.684 2.094 1.156 1.031 2.133 1.352 2.434 1.504.301.148.477.125.656-.078.176-.207.766-.891.969-1.195.203-.305.406-.254.684-.152.277.098 1.762.832 2.066.984.305.152.508.227.582.355.074.125.074.734-.168 1.418z"/></svg>
+            <span>Confirm on WhatsApp</span>
+          </button>
+
+          <button class="btn btn-primary" onclick="closeInvoiceModal()">
+            <span>Continue Shopping</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal-backdrop" id="searchModal">
+    <div class="search-modal-container">
+      <div class="search-modal-header">
+        <div class="search-input-wrapper">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#14532D" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="searchInput" placeholder="Search milk, curd, ghee, oil, dry fruits, dry powders..." autocomplete="off">
+        </div>
+        <button class="modal-close-btn" onclick="closeSearchModal()">&times;</button>
+      </div>
+      <div class="search-results-area" id="searchResults">
+        <p class="search-hint">Type to search among our 6 traditional farm harvest categories...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT QUICK VIEW MODAL -->
+  <div class="modal-backdrop" id="productModal">
+    <div class="product-modal-container">
+      <button class="modal-close-btn product-modal-close" onclick="closeProductModal()">&times;</button>
+      <div class="product-modal-grid">
+        <div class="modal-img-col">
+          <img src="" alt="" id="modalProductImg" class="modal-product-img">
+          <div class="modal-purity-badge" id="modalProductBadge">100% Traditional</div>
+        </div>
+        <div class="modal-info-col">
+          <span class="modal-category" id="modalProductCategory">Category</span>
+          <div class="product-company-badge" style="margin: 6px 0 10px;">
+            <span>🌿</span> Marketed by: <strong>Brundavan Natural Farms</strong>
+          </div>
+          <h2 class="modal-title" id="modalProductTitle">Product Title</h2>
+          <div class="modal-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-val">4.9 ★ (1,450+ Verified Ratings)</span>
+          </div>
+          <div class="modal-price-box">
+            <span class="modal-curr">&#8377;</span>
+            <span class="modal-amount" id="modalProductPrice">0</span>
+            <span class="modal-unit" id="modalProductUnit">/ unit</span>
+            <span class="modal-purity-tag">100% Direct Farm Fresh</span>
+          </div>
+          <p class="modal-desc" id="modalProductDesc">Product detailed description.</p>
+          
+          <div class="modal-features-list" id="modalProductFeatures"></div>
+
+          <div class="modal-purchase-controls">
+            <div class="qty-control">
+              <button class="qty-btn" onclick="changeModalQty(-1)">&minus;</button>
+              <span class="qty-num" id="modalQtyVal">1</span>
+              <button class="qty-btn" onclick="changeModalQty(1)">&plus;</button>
+            </div>
+            <button class="btn btn-primary modal-add-btn" id="modalAddCartBtn">
+              <span>Add to Basket</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLICY MODAL -->
+  <div class="modal-backdrop" id="policyModal">
+    <div class="generic-modal-container">
+      <div class="generic-modal-header">
+        <h3 class="modal-heading" id="policyModalTitle">Policy Information</h3>
+        <button class="modal-close-btn" onclick="closePolicyModal()">&times;</button>
+      </div>
+      <div class="generic-modal-body" id="policyModalBody"></div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-container" id="toastBox">
+    <div class="toast-icon">✓</div>
+    <div class="toast-content">
+      <strong id="toastTitle">Added to Cart!</strong>
+      <span id="toastMsg">Item is now in your farm basket.</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function openGalleryLightbox(imgSrc, title, desc, badge) {
+      const modal = document.getElementById("galleryLightboxModal");
+      if (!modal) return;
+      document.getElementById("lightboxImg").src = imgSrc;
+      document.getElementById("lightboxTitle").textContent = title;
+      document.getElementById("lightboxDesc").textContent = desc;
+      document.getElementById("lightboxBadge").textContent = badge;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeGalleryLightbox() {
+      const modal = document.getElementById("galleryLightboxModal");
+      if (!modal) return;
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  </script>
+</body>
+</html>
